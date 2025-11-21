@@ -137,31 +137,31 @@ export function JwtTool() {
                                 </pre>
                                 {/* Show common claims */}
                                 <div className="mt-3 space-y-2 text-sm">
-                                    {decoded.payload.iss && (
+                                    {(decoded.payload as any).iss && (
                                         <div className="flex justify-between">
                                             <span className="text-muted-foreground">Issuer (iss):</span>
-                                            <span className="font-mono">{String(decoded.payload.iss)}</span>
+                                            <span className="font-mono">{String((decoded.payload as any).iss)}</span>
                                         </div>
                                     )}
-                                    {decoded.payload.sub && (
+                                    {(decoded.payload as any).sub && (
                                         <div className="flex justify-between">
                                             <span className="text-muted-foreground">Subject (sub):</span>
-                                            <span className="font-mono">{String(decoded.payload.sub)}</span>
+                                            <span className="font-mono">{String((decoded.payload as any).sub)}</span>
                                         </div>
                                     )}
-                                    {decoded.payload.exp && (
+                                    {(decoded.payload as any).exp && (
                                         <div className="flex justify-between">
                                             <span className="text-muted-foreground">Expires (exp):</span>
                                             <span className="font-mono text-xs">
-                                                {formatTimestamp(Number(decoded.payload.exp))}
+                                                {formatTimestamp(Number((decoded.payload as any).exp))}
                                             </span>
                                         </div>
                                     )}
-                                    {decoded.payload.iat && (
+                                    {(decoded.payload as any).iat && (
                                         <div className="flex justify-between">
                                             <span className="text-muted-foreground">Issued At (iat):</span>
                                             <span className="font-mono text-xs">
-                                                {formatTimestamp(Number(decoded.payload.iat))}
+                                                {formatTimestamp(Number((decoded.payload as any).iat))}
                                             </span>
                                         </div>
                                     )}
